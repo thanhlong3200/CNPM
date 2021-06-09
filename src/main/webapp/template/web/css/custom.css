@@ -1,3 +1,7 @@
 a.register-panel i {
     margin-right: 10px;
 }
+.register-form {
+    width: 60%;
+    margin: auto;
+}

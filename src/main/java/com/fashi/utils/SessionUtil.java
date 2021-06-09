@@ -4,13 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 
 public class SessionUtil {
 
-    private static SessionUtil sessionUtil = null;
+    private static SessionUtil instance = null;
+    
+    private SessionUtil() {};
 
     public static SessionUtil getInstance() {
-        if (sessionUtil == null) {
-            sessionUtil = new SessionUtil();
+        if (instance == null) {
+        	instance = new SessionUtil();
         }
-        return sessionUtil;
+        return instance;
     }
 
     public void putValue(HttpServletRequest request, String key, Object value) {

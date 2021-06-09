@@ -17,15 +17,42 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
-                    <a href="<c:url value = "/dang-ky" />" class="register-panel"><i class="fa fa-user"></i>Đăng ký</a>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
+                <c:if test="${empty USERMODEL}">
+                    <a href="<c:url value = "/dang-ky"/>" class="register-panel">Đăng ký</a>
+                    <a style="padding-right: 20px" href="<c:url value = "/dang-nhap"/>" class="register-panel">Đăng
+                        nhập</a>
+                </c:if>
+                <c:if test="${not empty USERMODEL}">
+                    <a style="width: 170px" href="<c:url value = "/capnhat?page=info"/>" class="login-panel">
+                        <i class="fa fa-user"></i>
+                        ${USERMODEL.fullname}</a>
+                    <ul class="dropdown" id="userOption">
+                        <li><a href="<c:url value = "/capnhat?page=info"/>">Đổi thông tin</a></li>
+                        <li><a href="<c:url value = "/view/web/list-order.jsp"/>">Đơn hàng</a></li>
+                        <li>
+                            <a href="<c:url value="/dang-nhap?action=logout"/>   ">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </c:if>
+                <div class="lan-selector">
+                    <select class="language_drop" name="countries" id="countries" style="width:300px;">
+                        <option value='yt' data-image="<c:url value="/template/img/flag-1.jpg"/>"
+                                data-imagecss="flag yt"
+                                data-title="Việt Nam">VietNam
+                        </option>
+                        <option value='yu' data-image="<c:url value="/template/img/flag-2.jpg"/>"
+                                data-imagecss="flag yu"
+                                data-title="English">English
+                        </option>
+                    </select>
                 </div>
+                <div class="top-social">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-twitter-alt"></i></a>
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                    <a href="#"><i class="ti-pinterest"></i></a>
+                </div>
+            </div>
             </div>
         </div>
         <div class="container">

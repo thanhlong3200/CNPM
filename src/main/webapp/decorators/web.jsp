@@ -34,7 +34,6 @@
 
 
 <script src="<c:url value="/template/web/js/fashi.js" />"></script>
-<script src="<c:url value="/template/web/js/register.js" />"></script>
 <script src="<c:url value="/template/web/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="/template/web/js/jquery-ui.min.js" />"></script>
 <script src="<c:url value="/template/web/js/jquery.countdown.min.js" />"></script>

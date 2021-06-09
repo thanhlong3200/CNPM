@@ -23,37 +23,82 @@
     </div>
     <!-- Breadcrumb Form Section Begin -->
 
-    <!-- Register Section Begin -->
     <div class="register-login-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="register-form">
-                        <h2>Register</h2>
-                        <form action="#">
-                            <div class="group-input">
-                                <label for="username">Username or email address *</label>
-                                <input type="text" id="username">
-                            </div>
-                            <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="text" id="pass">
-                            </div>
-                            <div class="group-input">
-                                <label for="con-pass">Confirm Password *</label>
-                                <input type="text" id="con-pass">
-                            </div>
-                            <button type="submit" class="site-btn register-btn">REGISTER</button>
-                        </form>
-                        <div class="switch-login">
-                            <a href="./login.html" class="or-login">Or Login</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="register-form">
+                    <h2>Đăng ký</h2>
+                    <form id="registry" action="<c:url value="/dang-ky"/> " method="POST">
+                        <div class="group-input">
+                            <label for="fullname">Họ tên *</label>
+                            <input type="text" name="fullname" id="fullname"
+                                   value="<%=request.getAttribute("fullname")==null?"":request.getAttribute("fullname")%>"/>
+                            <label style="color: #F00" class="error" for="fullname"></label>
                         </div>
+                        
+                        <div class="group-input">
+                            <label for="username">Tên tài khoản *</label>
+                            <input value="111111" type="text" name="username" id="username"/>
+                            <label style="color: #F00" class="error" for="username">
+                                <%=request.getAttribute("uname-err") == null ? "" :
+                                        request.getAttribute("uname-err")%>
+                            </label>
+                        </div>
+                        
+                        <div class="group-input">
+                            <label for="password">Mật khẩu *</label>
+                            <input value="111111" type="password" name="password" id="password">
+                            <label style="color: #F00" class="error" for="password"></label>
+                        </div>
+                        <div class="group-input">
+                            <label for="confirmPassword">Nhập lại mật khẩu *</label>
+                            <input value="111111" type="password" name="confirmPassword" id="confirmPassword">
+                            <label style="color: #F00" class="error" for="confirmPassword"></label>
+                        </div>
+                        <div class="group-input">
+                            <label for="gender">Giới tính *</label>
+                            <select id="gender" name = "gender">
+                            	<option value ="">--Chọn giới tính--</option>
+                            	<option value = "male">Nam</option>
+                            	<option value = "female">Nữ</option>
+                            	<option value = "other">Khác</option>
+                            </select>
+                            <label style="color: #F00" class="error" for="gender"></label>
+                        </div>
+                        <div class="group-input">
+                            <label for="email">Email *</label>
+                            <input type="email" name="email" id="email"
+                                   value="<%=request.getAttribute("email")==null?"":request.getAttribute("email")%>">
+                            <label style="color: #F00" class="error" for="email"></label>
+                        </div>
+                        
+                         <div class="group-input">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="text" name="phone" id="phone"
+                                   value="<%=request.getAttribute("phone")==null?"":request.getAttribute("phone")%>">
+                            <label style="color: #F00" class="error" for="phone"></label>
+                        </div>
+                        
+                        <div class="group-input">
+                            <label for="address">Địa chỉ *</label>
+                            <input type="text" name="address" id="address"
+                                   value="<%=request.getAttribute("address")==null?"":request.getAttribute("address")%>">
+                            <label style="color: #F00" class="error" for="address"></label>
+                        </div>
+        
+                        <button id="registryBtn" type="submit" class="site-btn login-btn">Đăng Ký</button>
+                    </form>
+                    <div class="switch-login">
+                        <a href="<c:url value="/dang-nhap"/>" class="or-login">Hoặc Đăng Nhập</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Register Form Section End -->
+</div>
+<!-- Register Form Section End -->
+<script src="<c:url value="/template/web/js/register.js" />"></script>
 </body>
 
 </html>
