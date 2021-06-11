@@ -2,7 +2,7 @@ package com.fashi.model;
 
 import java.sql.Timestamp;
 
-public class UserModel {
+public class User {
 	private Integer id;
 	private String fullname;
 	private String username;

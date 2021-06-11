@@ -5,3 +5,13 @@ a.register-panel i {
     width: 60%;
     margin: auto;
 }
+select#filterSearch {
+    float: left;
+    height: 50px;
+    border: 1px solid #00000030;
+    padding: 10px;
+}
+div#stockQuantity p {
+    position: absolute;
+    display: none;
+}

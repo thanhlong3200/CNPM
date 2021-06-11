@@ -2,13 +2,13 @@ package com.fashi.mapper;
 
 import java.sql.ResultSet;
 
-import com.fashi.model.UserModel;
+import com.fashi.model.User;
 
-public class UserMapper implements RowMapper<UserModel>{
+public class UserMapper implements RowMapper<User>{
 
 	@Override
-	public UserModel mapRow(ResultSet rs) {
-		UserModel user = new UserModel();
+	public User mapRow(ResultSet rs) {
+		User user = new User();
 		try {
 			user.setId(rs.getInt("id"));
 			user.setFullname(rs.getString("fullname"));
