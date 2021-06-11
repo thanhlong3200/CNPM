@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fashi.model.UserModel;
+import com.fashi.model.User;
 import com.fashi.service.IUserService;
 import com.fashi.utils.EncryptUtil;
 import com.fashi.utils.SessionUtil;
@@ -41,9 +41,9 @@ public class RegisterController extends HttpServlet{
 	        String address = req.getParameter("address");
 	        String gender = req.getParameter("gender");
 
-	        UserModel tmp = userService.getUser(username);
+	        User tmp = userService.getUser(username);
 	        if (tmp == null) {
-	            UserModel user = new UserModel();
+	            User user = new User();
 	            
 	            password= EncryptUtil.encryptMD5(password);
 	            

@@ -1,11 +1,11 @@
 package com.fashi.service;
 
-import com.fashi.model.UserModel;
+import com.fashi.model.User;
 
 public interface IUserService {
 
-	UserModel getUser(String username);
+	User getUser(String username);
 
-	UserModel register(UserModel user);
+	User register(User user);
 	
 }
