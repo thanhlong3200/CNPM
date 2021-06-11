@@ -1,7 +1,6 @@
 package com.fashi.dao.impl;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +8,6 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import com.fashi.constants.ConnectionPool;
 import com.fashi.dao.GenericDAO;
@@ -31,8 +29,9 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 //		}
 //	}
 	
+
 	@Override
-	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
+	public List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
 		List<T> results = new ArrayList<>();
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -46,6 +45,42 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				results.add(rowMapper.mapRow(resultSet));
 			}
 			return results;
+		} catch (SQLException e) {
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (resultSet != null) {
+					resultSet.close();
+				}
+			} catch (SQLException e) {
+				return null;
+			}
+		}
+	}
+
+	@Override
+	public T queryOne(String sql, RowMapper<T> rowMapper, Object... parameters) {
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = ConnectionPool.getConnection("queryOne");
+			statement = connection.prepareStatement(sql);
+			setParameter(statement, parameters);
+			resultSet = statement.executeQuery();
+			T result = null;
+			while (resultSet.next()) {
+				result = rowMapper.mapRow(resultSet);
+			}
+			return result;
+			
 		} catch (SQLException e) {
 			return null;
 		} finally {

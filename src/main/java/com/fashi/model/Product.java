@@ -1,5 +1,8 @@
 package com.fashi.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
 	private Integer id;
 	private String code;
@@ -9,9 +12,32 @@ public class Product {
 	private Integer status;
 	private Integer originPrice;
 	private Integer sellPrice;
-	private Integer brandId;
-	private Integer collectionId;
-	private Integer groupId;
+
+	private String brandName;
+	private String collectionName;
+	private String groupName;
+	private List<Image> images;
+	private List<Stock> stocks;
+	
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+	public String getCollectionName() {
+		return collectionName;
+	}
+	public void setCollectionName(String collectionName) {
+		this.collectionName = collectionName;
+	}
+	public String getGroupName() {
+		return groupName;
+	}
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -60,23 +86,18 @@ public class Product {
 	public void setSellPrice(Integer sellPrice) {
 		this.sellPrice = sellPrice;
 	}
-	public Integer getBrandId() {
-		return brandId;
+
+	public List<Image> getImages() {
+		return images;
 	}
-	public void setBrandId(Integer brandId) {
-		this.brandId = brandId;
+	public void setImages(List<Image> images) {
+		this.images = images;
 	}
-	public Integer getCollectionId() {
-		return collectionId;
+	public List<Stock> getStocks() {
+		return stocks;
 	}
-	public void setCollectionId(Integer collectionId) {
-		this.collectionId = collectionId;
-	}
-	public Integer getGroupId() {
-		return groupId;
-	}
-	public void setGroupId(Integer groupId) {
-		this.groupId = groupId;
+	public void setStocks(List<Stock> stocks) {
+		this.stocks = stocks;
 	}
 	
 }

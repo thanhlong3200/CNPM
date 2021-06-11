@@ -11,8 +11,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO{
 	@Override
 	public User getUser(String username) {
 		String sql = "SELECT * FROM users WHERE username = ?";
-		List<User> users = query(sql, new UserMapper(), username);
-		return users.isEmpty() ? null : users.get(0);
+		return queryOne(sql, new UserMapper(), username);
 	}
 
 	@Override
@@ -37,8 +36,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO{
 	@Override
 	public User getUser(Integer id) {
 		String sql = "SELECT * FROM users WHERE id = ?";
-		List<User> users = query(sql, new UserMapper(), id);
-		return users.isEmpty() ? null : users.get(0);
+		return queryOne(sql, new UserMapper(), id);
 	}
 	
 }

@@ -3,7 +3,6 @@ package com.fashi.constants;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 import com.fashi.constants.DBConfiguration.DbConfiguration;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
