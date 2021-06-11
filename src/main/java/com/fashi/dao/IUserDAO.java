@@ -1,13 +1,13 @@
 package com.fashi.dao;
 
-import com.fashi.model.UserModel;
+import com.fashi.model.User;
 
-public interface IUserDAO extends GenericDAO<UserModel>{
+public interface IUserDAO extends GenericDAO<User>{
 
-	UserModel getUser(String username);
+	User getUser(String username);
 
-	Integer insert(UserModel user);
+	Integer insert(User user);
 
-	UserModel getUser(Integer id);
+	User getUser(Integer id);
 
 }

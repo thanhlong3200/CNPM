@@ -26,13 +26,13 @@
                     <a style="width: 170px" href="<c:url value = "/capnhat?page=info"/>" class="login-panel">
                         <i class="fa fa-user"></i>
                         ${USERMODEL.fullname}</a>
-                    <ul class="dropdown" id="userOption">
-                        <li><a href="<c:url value = "/capnhat?page=info"/>">Đổi thông tin</a></li>
-                        <li><a href="<c:url value = "/view/web/list-order.jsp"/>">Đơn hàng</a></li>
+                   <%--  <ul class="dropdown" id="userOption">
+                        <li><a href="<c:url value = ""/>">Đổi thông tin</a></li>
+                        <li><a href="<c:url value = ""/>">Đơn hàng</a></li>
                         <li>
-                            <a href="<c:url value="/dang-nhap?action=logout"/>   ">Đăng xuất</a>
+                            <a href="<c:url value=""/>   ">Đăng xuất</a>
                         </li>
-                    </ul>
+                    </ul> --%>
                 </c:if>
                 <div class="lan-selector">
                     <select class="language_drop" name="countries" id="countries" style="width:300px;">
@@ -67,11 +67,18 @@
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
-                            <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </div>
+	                        <form  action="<c:url value="/tim-kiem"/>">
+	                            <select id = "filterSearch" name ="filter">
+	                           		<option value="product_name">Sản phẩm</option>
+	                            	<option value="product_group">Phân loại</option>
+	                            	<option value="product_brand">Thương hiệu</option>
+		                                         	
+	                            </select>
+	                            <div class="input-group">
+	                                <input type="text" name = "keyword" placeholder="Nhập từ khóa tìm kiếm">
+	                                <button type="submit">Tìm kiếm</button>
+	                            </div>
+	                         </form>
                         </div>
                     </div>
                     <div class="col-lg-3 text-right col-md-3">

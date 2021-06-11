@@ -3,7 +3,7 @@ package com.fashi.service.impl;
 import javax.inject.Inject;
 
 import com.fashi.dao.IUserDAO;
-import com.fashi.model.UserModel;
+import com.fashi.model.User;
 import com.fashi.service.IUserService;
 
 public class UserService implements IUserService{
@@ -12,12 +12,12 @@ public class UserService implements IUserService{
 	private IUserDAO userDAO;
 	
 	@Override
-	public UserModel getUser(String username) {
+	public User getUser(String username) {
 		return userDAO.getUser(username);
 	}
 
 	@Override
-	public UserModel register(UserModel user) {
+	public User register(User user) {
 		Integer id = userDAO.insert(user);
 		return userDAO.getUser(id);
 	}
