@@ -16,4 +16,5 @@ public interface IProductDAO {
 	List<Product> getAll();
 
 	Product getOne(Integer id);
+
 }

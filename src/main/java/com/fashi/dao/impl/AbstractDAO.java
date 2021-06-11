@@ -29,6 +29,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 //		}
 //	}
 	
+
 	@Override
 	public List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
 		List<T> results = new ArrayList<>();
@@ -62,7 +63,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			}
 		}
 	}
-	
+
 	@Override
 	public T queryOne(String sql, RowMapper<T> rowMapper, Object... parameters) {
 		

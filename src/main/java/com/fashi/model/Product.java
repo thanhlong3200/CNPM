@@ -12,6 +12,7 @@ public class Product {
 	private Integer status;
 	private Integer originPrice;
 	private Integer sellPrice;
+
 	private String brandName;
 	private String collectionName;
 	private String groupName;
@@ -36,6 +37,7 @@ public class Product {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -84,6 +86,7 @@ public class Product {
 	public void setSellPrice(Integer sellPrice) {
 		this.sellPrice = sellPrice;
 	}
+
 	public List<Image> getImages() {
 		return images;
 	}

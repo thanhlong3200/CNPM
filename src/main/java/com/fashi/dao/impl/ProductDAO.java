@@ -8,7 +8,6 @@ import com.fashi.model.Product;
 
 public class ProductDAO extends AbstractDAO<Product> implements IProductDAO{
 
-
 	@Override
 	public List<Product> getByName(String name) {
 		name = "%"+name+"%";
@@ -16,6 +15,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO{
 				+ " from products p join products_group pg on p.group_id = pg.id "
 				+ "join products_brand pb on pb.id = p.brand_id"
 				+ " where p.name like ? and p.status = 1";
+
 		return query(sql, new ProductMapper(), name);
 	}
 
@@ -65,6 +65,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO{
 				+ " where p.id = ? and p.status = 1";
 		return queryOne(sql, new ProductMapper(), id);
 	}
+
 	
 	
 	

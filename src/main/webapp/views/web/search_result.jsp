@@ -73,8 +73,7 @@
 											<div class="pi-text">
 												<div class="catagory-name">${product.groupName}</div>
 												<div class="catagory-name">${product.brandName}</div>
-												<a href="#">
-												
+												<a href="#">									
 													<h5>${product.name}</h5>
 												</a>
 												<div class="product-price">
