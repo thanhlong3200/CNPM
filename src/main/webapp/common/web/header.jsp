@@ -75,7 +75,7 @@
 		                                         	
 	                            </select>
 	                            <div class="input-group">
-	                                <input type="text" name = "keyword" placeholder="Nhập từ khóa tìm kiếm">
+	                                <input type="text" name = "keyword" placeholder="Nhập từ khóa tìm kiếm" maxlength="30" required>
 	                                <button type="submit">Tìm kiếm</button>
 	                            </div>
 	                         </form>
