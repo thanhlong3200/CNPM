@@ -17,7 +17,7 @@ $().ready(function () {
                 password: {
                     required: true,
                     minlength: 6,
-                    maxlength: 30,
+                    maxlength: 60,
 					pattern: /^[a-zA-Z0-9]+$/
                 },
                 confirmPassword: {

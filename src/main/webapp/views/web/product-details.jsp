@@ -159,6 +159,9 @@
 								</div>
 
 								<div class="pd-size-choose">
+									<c:if test="${product.stocks.size == 0}">
+										<h3>Hết hàng</h3>
+									</c:if>
 									<c:forEach items="${product.stocks}" var="stock">
 
 										<div class="sc-item">
@@ -167,7 +170,7 @@
 										</div>
 
 									</c:forEach>
-
+									
 									<div id="stockQuantity">
 										<c:forEach items="${product.stocks}" var="stock">
 											<p data-stock = "stock${stock.id}">Còn lại ${stock.quantity} sản phẩm</p>
