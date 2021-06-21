@@ -150,7 +150,7 @@
 									<p>${product.description}</p>
 									<h4>
 										<c:if test="${product.sellPrice < product.originPrice}">
-														${product.sellPrice} đ<span>${product.originPrice}</span>
+														${product.sellPrice} đ<span>${product.originPrice} đ</span>
 										</c:if>
 										<c:if test="${product.sellPrice == product.originPrice}">
 														${product.sellPrice} đ
@@ -159,7 +159,7 @@
 								</div>
 
 								<div class="pd-size-choose">
-									<c:if test="${product.stocks.size == 0}">
+									<c:if test="${product.stocks.size() == 0}">
 										<h3>Hết hàng</h3>
 									</c:if>
 									<c:forEach items="${product.stocks}" var="stock">
