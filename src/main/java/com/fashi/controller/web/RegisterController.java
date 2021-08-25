@@ -45,7 +45,7 @@ public class RegisterController extends HttpServlet{
 	        if (tmp == null) {
 	            User user = new User();
 	            
-	            password= EncryptUtil.encryptMD5(password);
+	            password = EncryptUtil.encryptMD5(password);
 	            
 	            user.setFullname(fullname);
 	            user.setUsername(username);
@@ -58,14 +58,14 @@ public class RegisterController extends HttpServlet{
 	            user.setGroupId(1); 
 	            user.setDateRegister(new Timestamp(Calendar.getInstance().getTimeInMillis()));
 	            
+	            
+	            
 	            if ((user = userService.register(user)) != null) {
 	            	  SessionUtil.getInstance().putValue(req, "USERMODEL", user);
 	            	   resp.sendRedirect(req.getContextPath() + "/trang-chu");
 				} else {
 					 req.getRequestDispatcher("/views/web/register.jsp").forward(req,resp);
-				}
-	           
-	            	 
+				}      	 
 	                     
 	         
 	        } else {
@@ -74,7 +74,7 @@ public class RegisterController extends HttpServlet{
 	            req.setAttribute("address",address);
 	            req.setAttribute("phone",phone);
 	            req.setAttribute("gender",gender);
-	            req.setAttribute("uname-err", "Tên tài khoản đã tồn tại");
+	            req.setAttribute("uname-err", "Ten tai khoan da ton tai");
 	            req.getRequestDispatcher("/views/web/register.jsp").forward(req,resp);
 	        }
 	}

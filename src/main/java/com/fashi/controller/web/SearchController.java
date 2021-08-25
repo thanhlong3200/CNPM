@@ -28,8 +28,6 @@ public class SearchController extends HttpServlet{
 		List<Product> list = searchService.search(filter, keyword);
 		
 		req.setAttribute("listProduct", list);
-		req.setAttribute("filter", filter);
-		req.setAttribute("keyword", keyword);
 		
 		RequestDispatcher rd = req.getRequestDispatcher("/views/web/search_result.jsp");
 		rd.forward(req, resp);

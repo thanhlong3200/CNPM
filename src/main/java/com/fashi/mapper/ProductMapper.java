@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import com.fashi.model.Product;
 
 public class ProductMapper implements RowMapper<Product>{
-
+	
 	@Override
 	public Product mapRow(ResultSet rs) {
 		Product product = new Product();

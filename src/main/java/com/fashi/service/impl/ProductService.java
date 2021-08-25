@@ -27,8 +27,11 @@ public class ProductService implements IProductService{
 	@Override
 	public Product getDetails(Integer id) {
 		Product product = productDAO.getOne(id);
+		
 		product.setImages(imageDAO.getByProductId(id));
+		
 		product.setStocks(stockDAO.getByProductId(id));
+		
 		return product;
 	}
 	
