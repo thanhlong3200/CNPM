@@ -39,7 +39,7 @@
                         
                         <div class="group-input">
                             <label for="username">Tên tài khoản *</label>
-                            <input value="111111" type="text" name="username" id="username"/>
+                            <input value="" type="text" name="username" id="username"/>
                             <label style="color: #F00" class="error" for="username">
                                 <%=request.getAttribute("uname-err") == null ? "" :
                                         request.getAttribute("uname-err")%>
@@ -48,12 +48,12 @@
                         
                         <div class="group-input">
                             <label for="password">Mật khẩu *</label>
-                            <input value="111111" type="password" name="password" id="password">
+                            <input value="" type="password" name="password" id="password">
                             <label style="color: #F00" class="error" for="password"></label>
                         </div>
                         <div class="group-input">
                             <label for="confirmPassword">Nhập lại mật khẩu *</label>
-                            <input value="111111" type="password" name="confirmPassword" id="confirmPassword">
+                            <input value="" type="password" name="confirmPassword" id="confirmPassword">
                             <label style="color: #F00" class="error" for="confirmPassword"></label>
                         </div>
                         <div class="group-input">
